@@ -195,6 +195,10 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   color: #fff;
 }
+#hero label {
+  text-transform: uppercase;
+  color: #fff;
+}
 
 @media (max-width: 768px) {
   #hero h1 {
@@ -229,12 +233,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   margin: 10px;
   border: 2px solid #fff;
+  background: transparent;
   color: #fff;
 }
 
 #hero .btn-get-started:hover {
-  background: #2dc997;
-  border: 2px solid #2dc997;
+  background: darkblue;
+  border: 2px solid #fff;
 }
 
 /*--------------------------------------------------------------
