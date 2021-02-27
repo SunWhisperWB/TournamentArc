@@ -36,10 +36,10 @@ public class Login extends HttpServlet {
         String pwd = request.getParameter("password");
 
         if(lg.validaLogin(name, pwd)){
-            request.getRequestDispatcher("loja.jsp").forward(request, response);
+            request.getRequestDispatcher("loja.html").forward(request, response);
         }else{
-            out.print("Error Logging in, Password or Username Incoorrect");
-            request.getRequestDispatcher("erro.jsp").forward(request, response);
+            out.print("Error Logging in, Password or Username Incorrect");
+            request.getRequestDispatcher("error.html").forward(request, response);
         }
     }
 
