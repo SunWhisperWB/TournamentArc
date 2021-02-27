@@ -25,7 +25,7 @@ public class CreateLogin {
             password = sb.toString();
 
             //preparing database statement for login
-            PreparedStatement ps = ObjCon.conn.prepareStatement("SELECT * FROM utilizador WHERE nome=? AND pwd=?;");
+            PreparedStatement ps = ObjCon.conn.prepareStatement("SELECT * FROM Clients WHERE nome=? AND pwd=?;");
             ps.setString(1, nome);
             ps.setString(2, password);
 

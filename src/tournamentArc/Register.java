@@ -49,7 +49,7 @@ public class Register extends HttpServlet {
 
             pwd = sb.toString();
 
-            PreparedStatement ps = objCon.conn.prepareStatement("INSERT INTO utilizador(id, nome, pwd) VALUES (?,?,?)");
+            PreparedStatement ps = objCon.conn.prepareStatement("INSERT INTO Clients(id, nome, pwd) VALUES (?,?,?)");
             ps.setString(1, null);
             ps.setString(2, name);
             ps.setString(3, pwd);
