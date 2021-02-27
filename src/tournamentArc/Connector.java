@@ -9,7 +9,7 @@ public class Connector {
 
     Connection conn;
     /* default values declared on connector */
-    private String url = "jdbc:mysql://localhost:3306/javaweb_pf";
+    private String url = "jdbc:mysql://localhost:3306/TournamentArc";
     private String user = "root";
     private String password = "";
 
