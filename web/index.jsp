@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page import="tournamentArc.*" %>
 <html lang="en">
 
 <head>
@@ -35,12 +36,12 @@
     <div class="container">
 
       <div id="logo" class="pull-left">
-        <a href="index.html"><img src="assets/img/logo.png" alt=""></a>
+        <a href="index.jsp"><img src="assets/img/logo.png" alt=""></a>
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li class="menu-active"><a href="index.html">Home</a></li>
+          <li class="menu-active"><a href="index.jsp">Home</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#team">Team</a></li>
           <li class="menu-has-children"><a href="">Drop Down</a>
@@ -70,8 +71,8 @@
     <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
       <h1>Tournament Arc</h1>
       <h2>A tournament management app</h2>
-      <a href="signup.html" class="btn-get-started">Sign Up</a>
-      <a href="login.html" class="btn-get-started">Login</a>
+      <a href="signup.jsp" class="btn-get-started">Sign Up</a>
+      <a href="login.jsp" class="btn-get-started">Login</a>
     </div>
   </section><!-- End Hero Section -->
 

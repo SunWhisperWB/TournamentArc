@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/Register"})
+
+@WebServlet("/Register")
 public class Register extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -49,7 +50,7 @@ public class Register extends HttpServlet {
 
             pwd = sb.toString();
 
-            PreparedStatement ps = objCon.conn.prepareStatement("INSERT INTO Clients(id, nome, pwd) VALUES (?,?,?)");
+            PreparedStatement ps = objCon.conn.prepareStatement("INSERT INTO Clients(id, name, pwd) VALUES (?,?,?)");
             ps.setString(1, null);
             ps.setString(2, name);
             ps.setString(3, pwd);
@@ -58,7 +59,7 @@ public class Register extends HttpServlet {
 
             if(i>0){
                 request.setAttribute("entrou", "entrou");
-                request.getRequestDispatcher("loja.jsp").forward(request, response);
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
 
         }catch(Exception e){

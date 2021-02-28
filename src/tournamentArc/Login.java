@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = {"/logIn"})
+@WebServlet("/logIn")
 public class Login extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

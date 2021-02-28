@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page import="tournamentArc.*" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -34,12 +35,12 @@
         <div class="container">
 
             <div id="logo" class="pull-left">
-                <a href="index.html"><img src="assets/img/logo.png" alt=""></a>
+                <a href="index.jsp"><img src="assets/img/logo.png" alt=""></a>
             </div>
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="index.html">Home</a></li>
+                    <li class="menu-active"><a href="index.jsp">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
@@ -70,7 +71,7 @@
     <section id="hero">
         <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
             <h1>Register here</h1>
-            <form action="/Register" method="post">
+            <form action="Register" method="post">
                 <label>Username: </label>
                 <input type="text" name="username" required>
                 <br>

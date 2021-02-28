@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TournamentArc:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/TournamentArc_war</output-path>
+    <root id="archive" name="TournamentArc_war.war">
+      <element id="artifact" artifact-name="TournamentArc:war exploded" />
+    </root>
+  </artifact>
+</component>
