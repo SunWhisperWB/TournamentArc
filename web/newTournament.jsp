@@ -77,7 +77,7 @@
     <section id="hero">
         <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
             <h1>Register here</h1>
-            <form action="Register" method="post">
+            <form action="NewTournament" method="post">
                 <label>Name: </label>
                 <input type="text" name="name" required>
                 <br>
@@ -105,7 +105,7 @@
                             <%
                                 }
                             %>
-                    </select>    
+                    </select>
                 </div>
                 <%
                     } catch (SQLException e) {
