@@ -4,7 +4,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
-<%@page language="java" contentType="text/html" pageEncoding="ISO-8859-1" import="java.sql.*" %>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="ISO-8859-1" import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -75,6 +75,7 @@
         <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
             <a href="newTournament.jsp" class="btn-get-started">New Tournament</a>
             <a href="newMatch.jsp" class="btn-get-started">New Match</a>
+            <a href="newParticipant.jsp" class="btn-get-started">New Participant/Team</a>
             <%   Connection connector;
                 Class.forName("com.mysql.jdbc.Driver");
 
@@ -95,7 +96,7 @@
                         String type = rs.getString(2);
                 %>
                     <a href="newTournament.jsp" class="btn-get-started"><%=name%> - <%=type%></a>
-                
+
                 <%
                     }
                 %>
