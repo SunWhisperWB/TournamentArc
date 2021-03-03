@@ -95,17 +95,17 @@
 
                 %>
                 <div class="container-generic">
-                    <%
-                        while (rs.next()) {
-
-                            Integer id = rs.getInt(1);
-                            String name = rs.getString(2);
-                    %>
-                    <option value="<%=id%>"><%=id%> - <%=name%></option>
-
-                    <%
-                        }
-                    %>
+                    <select name="tournamentType" id="tournamentType">
+                            <%
+                                while (rs.next()) {
+                                    Integer id = rs.getInt(1);
+                                    String name = rs.getString(2);
+                            %>
+                        <option value="<%=id%>"><%=id%> - <%=name%></option>
+                            <%
+                                }
+                            %>
+                    </select>    
                 </div>
                 <%
                     } catch (SQLException e) {
