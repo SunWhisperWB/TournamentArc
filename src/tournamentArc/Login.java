@@ -75,7 +75,7 @@ public class Login extends HttpServlet {
             //checking if username password combo exist
             ResultSet rs = ps.executeQuery();
             status = rs.next();
-            System.out.println(status);
+            System.out.println(status); //for debugging
 
 
         }catch(Exception e){

@@ -32,7 +32,7 @@ public class NewTournament extends HttpServlet{
         PrintWriter out = response.getWriter();
 
         String name = request.getParameter("name");
-        Integer type = Integer.parseInt(request.getParameter("tournamentType"));
+        int type = Integer.parseInt(request.getParameter("tournamentType"));
         try{
             Connector objCon = new Connector();
             objCon.openConnection();
