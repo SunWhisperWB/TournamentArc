@@ -72,10 +72,10 @@
       <h1>Login:</h1>
       <form action="logIn" method="post">
         <label>Username: </label>
-        <input type="text" name="username" required>
+        <input type="text" name="username" required placeholder="username">
         <br>
         <label>Password: </label>
-        <input type="password" name="password" required>
+        <input type="password" name="password" required placeholder="password">
         <br>
         <button type="login" class="btn-get-started">Login</button>
       </form>

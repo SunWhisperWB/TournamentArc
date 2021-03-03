@@ -1,21 +1,17 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: hugo
-  Date: 03/03/21
-  Time: 11:06
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page import="java.sql.DriverManager"%>
-<%@ page import="java.sql.ResultSet"%>
-<%@ page import="java.sql.PreparedStatement"%>
-<%@ page import="java.sql.Connection"%>
+<!DOCTYPE html>
+<%@ page import="tournamentArc.*" %>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="ISO-8859-1" import="java.sql.*" %>
 <html>
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Tournament Arc - Personal Page</title>
+    <title>Tournament Arc - New Tournament</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -38,110 +34,128 @@
     <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
+
 <body>
-<!-- header -->
-<header id="header" class="header-transparent">
-    <div class="container">
+<div>
+    <header id="header" class="header-transparent">
+        <div class="container">
 
-        <div id="logo" class="pull-left">
-            <a href="index.jsp"><img src="assets/img/logo.png" alt=""></a>
+            <div id="logo" class="pull-left">
+                <a href="index.jsp"><img src="assets/img/logo.png" alt=""></a>
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="index.jsp">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li class="menu-has-children"><a href="">Drop Down</a>
+                        <ul>
+                            <li><a href="#">Drop Down 1</a></li>
+                            <li class="menu-has-children"><a href="#">Drop Down 2</a>
+                                <ul>
+                                    <li><a href="#">Deep Drop Down 1</a></li>
+                                    <li><a href="#">Deep Drop Down 2</a></li>
+                                    <li><a href="#">Deep Drop Down 3</a></li>
+                                    <li><a href="#">Deep Drop Down 4</a></li>
+                                    <li><a href="#">Deep Drop Down 5</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Drop Down 3</a></li>
+                            <li><a href="#">Drop Down 4</a></li>
+                            <li><a href="#">Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav><!-- #nav-menu-container -->
         </div>
+    </header><!-- End Header -->
 
-        <nav id="nav-menu-container">
-            <ul class="nav-menu">
-                <li class="menu-active"><a href="index.jsp">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#team">Team</a></li>
-                <li class="menu-has-children"><a href="">Drop Down</a>
-                    <ul>
-                        <li><a href="#">Drop Down 1</a></li>
-                        <li class="menu-has-children"><a href="#">Drop Down 2</a>
-                            <ul>
-                                <li><a href="#">Deep Drop Down 1</a></li>
-                                <li><a href="#">Deep Drop Down 2</a></li>
-                                <li><a href="#">Deep Drop Down 3</a></li>
-                                <li><a href="#">Deep Drop Down 4</a></li>
-                                <li><a href="#">Deep Drop Down 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Drop Down 3</a></li>
-                        <li><a href="#">Drop Down 4</a></li>
-                        <li><a href="#">Drop Down 5</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav><!-- #nav-menu-container -->
-    </div>
-</header><!-- End Header -->
+    <section id="hero">
+        <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+            <h1>Create a Match</h1>
+            <h2>(and submit it)</h2>
+            <form action="NewMatch" method="post">
+                <br>
+                <label>Participants: </label>
+                <%   Connection connector;
+                    Class.forName("com.mysql.jdbc.Driver");
 
-<section id="hero"><!-- hero -->
-    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-        <h1>Create a Match</h1>
-        <%   Connection connector;
-            Class.forName("com.mysql.jdbc.Driver");
+                    connector = DriverManager.getConnection("jdbc:mysql://localhost:3306/TournamentArc", "root", "");;
 
-            connector = DriverManager.getConnection("jdbc:mysql://localhost:3306/TournamentArc", "root", "");;
+                    try {
 
-            try {
+                        PreparedStatement ps = connector.prepareStatement("Select id, name, elo from Participants");
 
-                PreparedStatement ps = connector.prepareStatement("Select id, name, elo Participants");
+                        ResultSet rs = ps.executeQuery();
 
-                ResultSet rs = ps.executeQuery();
+                %>
+                <div class="container-generic">
+                    <label>Participant 1: </label>
+                    <select name="participant1" id="participant1">
+                        <%
+                            while (rs.next()) {
+                                Integer id = rs.getInt(1);
+                                String name = rs.getString(2);
+                                Integer elo = rs.getInt(3);
+                        %>
+                        <option value="<%=id%>"><%=id%> - <%=name%> (<%=elo%>)</option>
+                        <%
+                            }
+                        %>
+                    </select>
+                <%
 
-        %>
+                        ResultSet rs2 = ps.executeQuery();
 
-        <div class="container-generic">
-            <form action="createNewMatch">
-                <label for="team1">Choose a team:</label>
-                <select name="team1" id="team1">
-                    <%
-                        while (rs.next()) {
-                            Integer id = rs.getInt(1);
-                            String name = rs.getString(2);
-                            Integer elo = rs.getInt(3);
-                    %>
-                    <option value="<%=id%>"><%=id%> - <%=name%> (<%=elo%>)</option>
-                    <%
-                        }
-                    %>
-                </select>
-                <label>Team 1 Score: </label>
-                <input type="number" name="team1Score" required>
+                %>
+                    <label>Participant 2: </label>
+                    <select name="participant2" id="participant2">
+                        <%
+                            while (rs2.next()) {
+                                Integer id = rs2.getInt(1);
+                                String name = rs2.getString(2);
+                                Integer elo = rs2.getInt(3);
+                        %>
+                        <option value="<%=id%>"><%=id%> - <%=name%> (<%=elo%>)</option>
+                        <%
+                            }
+                        %>
+                    </select>
+                </div>
+                <%
+                    } catch (SQLException e) {
+                        System.out.println("Erro na conexão à base de dados" + e);
+                    }
+                %>
+                <br>
 
-                <select name="team2" id="team2">
-                    <%
-                        while (rs.next()) {
-                            Integer id = rs.getInt(1);
-                            String name = rs.getString(2);
-                            Integer elo = rs.getInt(3);
-                    %>
-                    <option value="<%=id%>"><%=id%> - <%=name%> (<%=elo%>)</option>
-                    <%
-                        }
-                    %>
-                </select>
-                <label>Team 2 Score: </label>
-                <input type="number" name="team2Score" required>
+                <label>Score: </label>
+                <label>Team1: </label>
+                <input type="number" name="team1score" required placeholder="0">
+                <label>Team 2: </label>
+                <input type="number" name="team2score" required placeholder="0">
+
+                <br>
+
+                <label>Winner: </label>
 
                 <select name="result" id="result">
-                    <option value="team1">Team1</option>
-                    <option value="team2">Team2</option>
-                    <option value="tie">Tie</option>
+                    <option value="0">Tie</option>
+                    <option value="1">Team 1</option>
+                    <option value="2">Team 2</option>
                 </select>
 
+                <br>
                 <button type="submit" class="btn-get-started">Submit</button>
             </form>
-
-
         </div>
-        <%
-            } catch (SQLException e) {
-                System.out.println("Erro na conexão à base de dados" + e);
-            }
-        %>
-    </div>
-</section><!-- End Hero Section -->
+    </section><!-- End Hero Section -->
 
+</div>
 <!-- ======= Footer ======= -->
 <footer id="footer">
     <div class="footer-top">
