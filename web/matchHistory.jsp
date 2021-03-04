@@ -45,9 +45,6 @@
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="index.jsp">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#team">Team</a></li>
                     <li><a href="index.jsp" >Logout</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
