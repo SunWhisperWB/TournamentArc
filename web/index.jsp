@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%@ page import="tournamentArc.*" %>
 <html lang="en">
 
 <head>
