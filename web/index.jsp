@@ -66,27 +66,27 @@
         <div class="row about-container">
 
           <div class="col-lg-6 content order-lg-1 order-2">
-            <h2 class="title">Few Words About Us</h2>
+            <h2 class="title">What is Tournament Arc?</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Tournament Arc is an Application that currently allows you to introduce an unlimited number of participants into a database and start calculating ELO based on their performances on matches against one another:
             </p>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="fa fa-shopping-bag"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+              <div class="icon"><i class="fa fa-bar-chart"></i></div>
+              <h4 class="title"><a href="">Permanent Database</a></h4>
+              <p class="description">The database saves whatever participant you have introduced thus you don't need to worry about remembering who you introduced, we've got you covered</p>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="fa fa-photo"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <div class="icon"><i class="fa fa-bar-chart"></i></div>
+              <h4 class="title"><a href="">Match History</a></h4>
+              <p class="description">Don't remember who played against who? No problem we keep a history of every match you introduce so you'll never have to worry about who played who again!</p>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
               <div class="icon"><i class="fa fa-bar-chart"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+              <h4 class="title"><a href="">Instant ELO Update</a></h4>
+              <p class="description">The App automatically recalculates each participant's ELO as each match is introduced with an instant update!</p>
             </div>
 
           </div>
@@ -102,11 +102,11 @@
       <div class="container">
         <div class="row" data-aos="zoom-in">
           <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">Sign Up</h3>
-            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h3 class="cta-title">Sign Up!</h3>
+            <p class="cta-text"> All this sounds great doesn't it? Join us Then!.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">Call To Action</a>
+            <a class="btn-get-started" href="signup.jsp">Sign Up Now!</a>
           </div>
         </div>
 
@@ -119,20 +119,20 @@
     <section id="team">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h3 class="section-title">Team</h3>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <h3 class="section-title">The Team</h3>
+          <p class="section-description">Wanna know who made this Awesome up? Check them out bellow!</p>
         </div>
         <div class="row">
           <div class="col-lg-3 col-md-6">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="pic"><img src="assets/img/team-1.jpg" alt=""></div>
+              <div class="pic"><img src="assets/img/HugoMonteiro.jpg" alt=""></div>
               <h4>Hugo Monteiro</h4>
               <span>Website Author</span>
               <div class="social">
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
                 <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/hugojmonteiro/"><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
           </div>
