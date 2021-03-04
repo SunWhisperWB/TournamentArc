@@ -60,6 +60,8 @@
 
                 connector = DriverManager.getConnection("jdbc:mysql://localhost:3306/TournamentArc", "root", "");;
 
+                int count=0;
+
                 try {
 
                     PreparedStatement ps = connector.prepareStatement
@@ -82,9 +84,15 @@
                         int score1 = Integer.parseInt(rs.getString(2));
                         int score2 = Integer.parseInt(rs.getString(3));
                         String name2 = rs.getString(4);
+                        count++;
                 %>
                 <button type="submit" class="btn-get-started"><%=name1%> - <%=score1%> vs <%=score2%> - <%=name2%> </button>
-                <br>
+
+                <%
+                    if(count == 2){
+                %> <br> <%
+                    }
+                %>
                 <%
                     }
                 %>
