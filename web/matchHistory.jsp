@@ -73,11 +73,46 @@
 
     <section id="hero">
         <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-            <a href="newTournament.jsp" class="btn-get-started">New Tournament</a>
-            <a href="newMatch.jsp" class="btn-get-started">New Match</a>
-            <a href="newParticipant.jsp" class="btn-get-started">New Participant/Team</a>
-            <a href="matchHistory.jsp" class="btn-get-started">Match History</a>
-            <a href="tournaments.jsp" class="btn-get-started">Tournaments</a>
+            <!-- Connection -->
+            <%   Connection connector;
+                Class.forName("com.mysql.jdbc.Driver");
+
+                connector = DriverManager.getConnection("jdbc:mysql://localhost:3306/TournamentArc", "root", "");;
+
+                try {
+
+                    PreparedStatement ps = connector.prepareStatement
+                            ("SELECT Participants.name  AS 'Team 1 Name',       " +
+                                    "matchHistory.team1score,\n" +
+                            "       matchHistory.team2score,\n" +
+                            "       myTable.`name` AS 'Team 2 Name'\n" +
+                            "FROM matchHistory\n" +
+                            "JOIN Participants ON matchHistory.team1id = Participants.id\n" +
+                            "JOIN Participants AS myTable ON matchHistory.team2id = myTable.id;");
+
+                    ResultSet rs = ps.executeQuery();
+
+            %>
+            <div class="container-generic"> <!-- getting match history -->
+                <%
+                    while (rs.next()) {
+
+                        String name1 = rs.getString(1);
+                        int score1 = Integer.parseInt(rs.getString(2));
+                        int score2 = Integer.parseInt(rs.getString(3));
+                        String name2 = rs.getString(4);
+                %>
+                <button type="submit" class="btn-get-started"><%=name1%> - <%=score1%> vs <%=score2%> - <%=name2%> </button>
+                <br>
+                <%
+                    }
+                %>
+            </div>
+            <%
+                } catch (SQLException e) {
+                    System.out.println("Erro na conexão à base de dados" + e);
+                }
+            %>
         </div>
     </section><!-- End Hero Section -->
 

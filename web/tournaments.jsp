@@ -73,11 +73,36 @@
 
     <section id="hero">
         <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-            <a href="newTournament.jsp" class="btn-get-started">New Tournament</a>
-            <a href="newMatch.jsp" class="btn-get-started">New Match</a>
-            <a href="newParticipant.jsp" class="btn-get-started">New Participant/Team</a>
-            <a href="matchHistory.jsp" class="btn-get-started">Match History</a>
-            <a href="tournaments.jsp" class="btn-get-started">Tournaments</a>
+            <%   Connection connector;
+                Class.forName("com.mysql.jdbc.Driver");
+
+                connector = DriverManager.getConnection("jdbc:mysql://localhost:3306/TournamentArc", "root", "");;
+
+                try {
+
+                    PreparedStatement ps = connector.prepareStatement("Select name, type from Tournaments");
+
+                    ResultSet rs = ps.executeQuery();
+
+            %>
+            <div class="container-generic">
+                <%
+                    while (rs.next()) {
+
+                        String name = rs.getString(1);
+                        String type = rs.getString(2);
+                %>
+                    <a href="tournamentEdit.jsp" class="btn-get-started"><%=name%> - <%=type%></a>
+                    <br>
+                <%
+                    }
+                %>
+            </div>
+            <%
+                } catch (SQLException e) {
+                    System.out.println("Erro na conexão à base de dados" + e);
+                }
+            %>
         </div>
     </section><!-- End Hero Section -->
 
