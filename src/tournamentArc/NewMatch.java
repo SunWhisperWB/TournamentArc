@@ -50,6 +50,12 @@ public class NewMatch extends HttpServlet{
             PreparedStatement query = objCon.conn.prepareStatement("SELECT elo FROM Participants WHERE id=? or id=? ;");
             query.setInt(1, team1);
             query.setInt(2, team2);
+
+            if(team1 == team2){
+                request.setAttribute("entrou", "entrou");
+                request.getRequestDispatcher("errorMatch.jsp").forward(request, response);
+            }
+
             ResultSet rs = query.executeQuery();
             int i=0;
             int[] id = {0, 0};
