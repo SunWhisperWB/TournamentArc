@@ -88,7 +88,7 @@
                 <button type="submit" class="btn-get-started"><%=name1%> - <%=score1%> vs <%=score2%> - <%=name2%> </button>
 
                 <%
-                    if(count == 2){
+                    if(count == 3){
                 %> <br> <%
                     }
                 %>
