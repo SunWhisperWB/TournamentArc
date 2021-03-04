@@ -106,7 +106,7 @@
             <p class="cta-text"> All this sounds great doesn't it? Join us Then!.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a href="login.jsp" class="btn-get-started">Sign Up Now!</a>
+            <a class="cta-btn align-middle" href="signup.jsp">Sign Up Now!</a>
           </div>
         </div>
 
@@ -120,7 +120,7 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h3 class="section-title">The Team</h3>
-          <p class="section-description">Wanna know who made this Awesome up? Check them out bellow!</p>
+          <p class="section-description">Wanna meet the Team who made this awesome app for you? Check them out bellow!</p>
         </div>
         <div class="row">
           <div class="col-lg-3 col-md-6">
@@ -132,7 +132,7 @@
                 <a href=""><i class="fa fa-twitter"></i></a>
                 <a href=""><i class="fa fa-facebook"></i></a>
                 <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href="https://www.linkedin.com/in/hugojmonteiro/"><i class="fa fa-linkedin"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
               </div>
             </div>
           </div>
