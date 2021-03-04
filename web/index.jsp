@@ -106,7 +106,7 @@
             <p class="cta-text"> All this sounds great doesn't it? Join us Then!.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="btn-get-started" href="signup.jsp">Sign Up Now!</a>
+            <a href="login.jsp" class="btn-get-started">Sign Up Now!</a>
           </div>
         </div>
 
@@ -125,7 +125,7 @@
         <div class="row">
           <div class="col-lg-3 col-md-6">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
-              <div class="pic"><img src="assets/img/HugoMonteiro.jpg" alt=""></div>
+              <div class="pic"><img src="assets/img/HugoMonteiro.png" alt=""></div>
               <h4>Hugo Monteiro</h4>
               <span>Website Author</span>
               <div class="social">
