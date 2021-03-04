@@ -42,10 +42,8 @@
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <li class="menu-active"><a href="index.jsp">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#team">Team</a></li>
-          </li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="index.jsp#about">About Us</a></li>
+          <li><a href="index.jsp#team">Team</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -62,6 +60,7 @@
         <input type="password" name="password" required placeholder="password">
         <br>
         <button type="login" class="btn-get-started">Login</button>
+        <a href="index.jsp" class="btn-get-started">Back</a>
       </form>
     </div>
   </section><!-- End Hero Section -->
